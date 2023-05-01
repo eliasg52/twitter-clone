@@ -1,7 +1,7 @@
 import { Image, StyleSheet, Text, View } from 'react-native';
-import tweets from '../assets/data/tweets';
+import { TweetI } from '../interfaces/interfaces';
 
-export const Tweet = ({ tweet }) => {
+export const Tweet = ({ tweet }: TweetI) => {
   return (
     <View style={styles.container}>
       <Image source={{ uri: tweet.user.image }} style={styles.userImage} />
