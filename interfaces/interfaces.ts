@@ -1,3 +1,5 @@
+import { EvilIcons } from '@expo/vector-icons';
+
 export interface TweetI {
   tweet: {
     id: string;
@@ -15,4 +17,9 @@ export interface TweetI {
       image?: string;
     };
   };
+}
+
+export interface IconButtonI {
+  text?: string | number;
+  icon: React.ComponentProps<typeof EvilIcons>['name'];
 }

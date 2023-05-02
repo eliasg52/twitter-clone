@@ -1,13 +1,34 @@
 import { Image, StyleSheet, Text, View } from 'react-native';
 import { TweetI } from '../interfaces/interfaces';
+import { Entypo } from '@expo/vector-icons';
+import { IconButton } from './IconButton';
 
 export const Tweet = ({ tweet }: TweetI) => {
   return (
     <View style={styles.container}>
       <Image source={{ uri: tweet.user.image }} style={styles.userImage} />
       <View style={styles.mainContainer}>
-        <Text style={styles.userName}>{tweet.user.name}</Text>
+        <View style={{ flexDirection: 'row', gap: 5 }}>
+          <Text style={styles.userName}>{tweet.user.name}</Text>
+          <Text style={styles.userTwName}>@{tweet.user.username} · 13h</Text>
+          <Entypo
+            name="dots-three-horizontal"
+            size={20}
+            color="grey"
+            style={{ marginLeft: 'auto' }}
+          />
+        </View>
         <Text style={styles.userContent}>{tweet.content}</Text>
+        {tweet.image ? (
+          <Image style={styles.tweetImage} src={tweet.image}></Image>
+        ) : null}
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+          <IconButton text={tweet.numberOfComments} icon="comment" />
+          <IconButton text={tweet.numberOfRetweets} icon="retweet" />
+          <IconButton text={tweet.numberOfLikes} icon="heart" />
+          <IconButton text={tweet.impressions || 0} icon="chart" />
+          <IconButton icon="share-apple" />
+        </View>
       </View>
     </View>
   );
@@ -35,5 +56,13 @@ const styles = StyleSheet.create({
   },
   userContent: {
     lineHeight: 20,
+    marginBottom: 5,
+  },
+  tweetImage: {
+    aspectRatio: 16 / 9,
+    marginVertical: 6,
+  },
+  userTwName: {
+    color: 'grey',
   },
 });
