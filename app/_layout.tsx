@@ -16,7 +16,7 @@ export {
 
 export const unstable_settings = {
   // Ensure that reloading on `/modal` keeps a back button present.
-  initialRouteName: '(tabs)',
+  initialRouteName: '(drawer)',
 };
 
 export default function RootLayout() {
@@ -46,9 +46,12 @@ function RootLayoutNav() {
     <>
       <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
         <Stack>
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          <Stack.Screen name="modal" />
+          <Stack.Screen
+            name="(drawer)"
+            options={{ headerShown: false, title: 'asd' }}
+          />
           <Stack.Screen name="new-tweet" options={{ headerShown: false }} />
+          <Stack.Screen name="tweet/[id]" options={{ title: 'Tweet' }} />
         </Stack>
       </ThemeProvider>
     </>

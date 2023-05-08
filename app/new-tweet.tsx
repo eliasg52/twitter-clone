@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
+    backgroundColor: 'white',
   },
   userImage: {
     width: 50,
@@ -46,6 +47,7 @@ const styles = StyleSheet.create({
   inputContainer: {
     flexDirection: 'row',
     gap: 10,
+    backgroundColor: 'white',
   },
   buttonContainer: {
     flexDirection: 'row',

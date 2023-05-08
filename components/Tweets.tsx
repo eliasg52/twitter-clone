@@ -5,6 +5,7 @@ import { IconButton } from './IconButton';
 import { Link } from 'expo-router';
 
 export const Tweet = ({ tweet }: TweetI) => {
+  console.log('tweet', tweet.id);
   return (
     <Link href={`/tweet/${tweet.id}`} asChild>
       <Pressable style={styles.container}>

@@ -1,6 +1,6 @@
 import { FlatList, StyleSheet, View, Text, Pressable } from 'react-native';
-import tweets from '../../assets/data/tweets';
-import { Tweet } from '../../components/Tweets';
+import tweets from '../../../assets/data/tweets';
+import { Tweet } from '../../../components/Tweets';
 import { Link } from 'expo-router';
 import { Entypo } from '@expo/vector-icons';
 
